@@ -1,4 +1,15 @@
 <?php
+/**
+ *    Provides a silo to access Diigo bookmarks. 
+ *
+ *    @category   PHP
+ *    @package    diigosilo
+ *    @author     Pierre-Yves Gillier <pivwan@gmail.com>
+ *    @copyright  2008 Pierre-Yves Gillier
+ *    @license    http://www.apache.org/licenses/LICENSE-2.0.txt  Apache Software Licence 2.0
+ *    @version    0.1
+ *    @link       http://www.pivwan.net/weblog/plugin-diigosilo
+ */
 
 // Load used classes.
 include_once(dirname(__FILE__).'/httpClient.class.php');
@@ -20,10 +31,10 @@ class DiigoSilo extends Plugin implements MediaSilo
 	{
 		return array('name' => 'Diigo Media Silo',
 			'version' => DIIGO_PLUGIN_VERSION,
-			'url' => 'http://www.pivwan.net/weblog/diigosilo/',
+			'url' => 'http://www.pivwan.net/weblog/plugin-diigosilo/',
 			'author' => 'Pierre-Yves "pivwan" Gillier',
 			'authorurl' => 'http://www.pivwan.net/weblog/',
-			'license' => 'Creative Commons C-BY-SA 2.5',
+			'license' => 'Apache Software License 2.0',
 			'description' => 'Implements Diigo integration',
 			'copyright' => '2008',
 			);

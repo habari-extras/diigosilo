@@ -1,5 +1,17 @@
 <?php
 
+/**
+ *    Main class to interact with Diigo API.
+ *
+ *    @category   PHP
+ *    @package    diigosilo
+ *    @author     Pierre-Yves Gillier <pivwan@gmail.com>
+ *    @copyright  2008 Pierre-Yves Gillier
+ *    @license    http://www.apache.org/licenses/LICENSE-2.0.txt  Apache Software Licence 2.0
+ *    @version    0.1
+ *    @link       http://www.pivwan.net/weblog/plugin-diigosilo
+ */
+
 class DiigoAPI
 {
 	private $username;
