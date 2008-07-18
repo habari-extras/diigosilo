@@ -7,7 +7,7 @@
  *    @author     Pierre-Yves Gillier <pivwan@gmail.com>
  *    @copyright  2008 Pierre-Yves Gillier
  *    @license    http://www.apache.org/licenses/LICENSE-2.0.txt  Apache Software Licence 2.0
- *    @version    0.1
+ *    @version    0.2
  *    @link       http://www.pivwan.net/weblog/plugin-diigosilo
  */
 
@@ -16,7 +16,7 @@ include_once(dirname(__FILE__).'/httpClient.class.php');
 include_once(dirname(__FILE__).'/diigo.class.php');
 
 
-define('DIIGO_PLUGIN_VERSION','0.1');
+define('DIIGO_PLUGIN_VERSION','0.2');
 
 class DiigoSilo extends Plugin implements MediaSilo
 {
@@ -170,7 +170,7 @@ class DiigoSilo extends Plugin implements MediaSilo
 	}
 	
 	public function action_admin_footer( $theme ) {
-  if ($theme->admin_page == 'publish') {
+  if ($theme->page == 'publish') {
     echo <<< DIIGO
     <script type="text/javascript">
       habari.media.output.diigo = function(fileindex, fileobj) {
