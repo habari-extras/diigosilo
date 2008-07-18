@@ -69,44 +69,46 @@ class DiigoSilo extends Plugin implements MediaSilo
 		switch($section)
 		{
 			case 'bookmarks':
-												$bookmarks = $diigo->getBookmarks();
-												foreach($bookmarks as $bookmark)
-												{
-													$results[] = new MediaAsset(
-																			self::SILO_NAME.'/bookmarks/'.base64_encode($bookmark->url),
-																			false,
-																			array(
-																						'title' => $bookmark->title,'filetype'=>'diigo',
-																						'link_url' => $bookmark->url,
-																						)
-																			);
-												}
-												break;
+				$bookmarks = $diigo->getBookmarks();
+				foreach($bookmarks as $bookmark)
+				{
+					$results[] = new MediaAsset(
+						self::SILO_NAME.'/bookmarks/'.base64_encode($bookmark->url),
+						false,
+						array(
+							'title' => $bookmark->title,'filetype'=>'diigo',
+							'link_url' => $bookmark->url,
+						)
+					);
+				}
+				break;
+
 			case 'tags':
-										//$tags = $diigo->getTags();
-										$results[] = new MediaAsset(
-												self::SILO_NAME . '/tags/' . "demo",
-												true,
-												array('title'=>'Tag de d&eacute;mo')
-											);
-										break;
+				//$tags = $diigo->getTags();
+				$results[] = new MediaAsset(
+					self::SILO_NAME . '/tags/' . "demo",
+					true,
+					array( 'title'=>'Tag de d&eacute;mo' )
+				);
+				break;
+
 			case '': 
-								$results[] = new MediaAsset(
-									self::SILO_NAME . '/bookmarks',
-									true,
-									array('title' => _t('Bookmarks'))
-								);
-								$results[] = new MediaAsset(
-									self::SILO_NAME . '/tags',
-									true,
-									array('title' => _t('Tags'))
-								);
-								$results[] = new MediaAsset(
-									self::SILO_NAME . '/lists',
-									true,
-									array('title' => _t('Lists'))
-								);
-								break;
+				$results[] = new MediaAsset(
+					self::SILO_NAME . '/bookmarks',
+					true,
+					array( 'title' => _t('Bookmarks') )
+				);
+				$results[] = new MediaAsset(
+					self::SILO_NAME . '/tags',
+					true,
+					array( 'title' => _t('Tags') )
+				);
+				$results[] = new MediaAsset(
+					self::SILO_NAME . '/lists',
+					true,
+					array( 'title' => _t('Lists') )
+				);
+				break;
 		}
 		
 		return $results;
@@ -131,7 +133,7 @@ class DiigoSilo extends Plugin implements MediaSilo
 	
 	// PLUGIN FUNCTIONS
 	
- /**
+ 	/**
 	* Add actions to the plugin page for this plugin
 	* The authorization should probably be done per-user.
 	*
@@ -156,9 +158,10 @@ class DiigoSilo extends Plugin implements MediaSilo
 			{
 				case _t('Configure'):
 					$ui = new FormUI(strtolower(get_class($this)));
-					$username = $ui->add('text', 'username_'.User::identify()->id, _t('Username:'));
-					$password = $ui->add('password', 'password_'.User::identify()->id, _t('Password:'));
-					$ui->on_success(array($this, 'updated_config'));
+					$username = $ui->append( 'text', 'username_'.User::identify()->id, 'diigosilo__username_'.User::identify()->id, _t('Username:') );
+					$password = $ui->append( 'password', 'password_'.User::identify()->id, 'diigosilo__password_'.User::identify()->id, _t('Password:') );
+
+					$ui->append( 'submit', 'save', _t('Save') );
 					$ui->out();
 				break;
 			}
