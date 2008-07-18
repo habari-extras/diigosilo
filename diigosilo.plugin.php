@@ -64,7 +64,7 @@ class DiigoSilo extends Plugin implements MediaSilo
 		$section = strtok($path, '/');
 		$results = array();
 		
-		$diigo = new DiigoAPI(Options::get('diigosilo:username_' . User::identify()->id),Options::get('diigosilo:password_' . User::identify()->id));
+		$diigo = new DiigoAPI(Options::get('diigosilo__username_' . User::identify()->id),Options::get('diigosilo__password_' . User::identify()->id));
 		
 		switch($section)
 		{
