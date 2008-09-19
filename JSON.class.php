@@ -134,7 +134,7 @@ class JSON
                     $ret = $tmp[0];
                     break;
                 case IN_OBJECT:
-                    $g=0;
+                    $g =0;
                     do  {
                         $varName = $this->getNextToken($f,$g,$xType);
                         if ( $xType != IN_STRING )  {
@@ -263,7 +263,7 @@ class JSON
                     break;
                 case "n":
                     if ( substr($e,$i,4) == "null" ) {
-                        $i=$i+4;
+                        $i =$i+4;
                         $state = IN_ATOMIC;
                         return NULL;
                     }
@@ -271,14 +271,14 @@ class JSON
                 case "t":
                     if ( substr($e,$i,4) == "true") {
                         $state = IN_ATOMIC;
-                        $i=$i+4;
+                        $i =$i+4;
                         return true;
                     }else break 2; /* exit from switch and while */
                     break;
                 case "f":
                     if ( substr($e,$i,4) == "false") {
                         $state = IN_ATOMIC;
-                        $i=$i+4;
+                        $i =$i+4;
                         return false;
                     }
                     else break 2; /* exit from switch and while */
@@ -315,7 +315,7 @@ class JSON
                         if ( $a == "e" && ($n == "+" || $n == "-"))
                             $i++;
                         else if ( $a == "e") 
-                            $this->error=true;
+                            $this->error =true;
                     }
                     
                     $end = $i;
