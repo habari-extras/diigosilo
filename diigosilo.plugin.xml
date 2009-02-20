@@ -1,0 +1,10 @@
+<plugin>
+	<name>Diigo Media Silo</name>
+	<url>http://www.pivwan.net/weblog/plugin-diigosilo/</url>
+	<author>Pierre-Yves "pivwan" Gillier</author>
+	<authorurl>http://www.pivwan.net/weblog/</authorurl>
+	<license>Apache Software License 2.0</license>
+	<description>Implements Diigo integration</description>
+	<copyright>2008</copyright>
+</plugin>
+
